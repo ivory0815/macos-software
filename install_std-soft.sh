@@ -161,3 +161,12 @@ else
   # Befehl zum Installieren von CyberGhost VPN
   brew install --cask cyberghost
 fi
+
+# Microsoft Edge
+if check_program_installed "microsoft-edge"; then
+  echo "Microsoft Edge ist bereits installiert."
+else
+  echo "Installiere Microsoft Edge..."
+  # Befehl zum Installieren von Microsoft Edge
+  brew install --cask microsoft-edge
+fi
