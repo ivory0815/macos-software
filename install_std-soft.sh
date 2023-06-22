@@ -21,8 +21,6 @@ programs=(
   "utm"
   "languagetool"
   "displaylink"
-  "hidden-bar"
-  "tinker-tool"
   "spotify"
   "handbrake"
   "cyberghost"
