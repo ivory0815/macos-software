@@ -135,24 +135,6 @@ else
   brew install --cask displaylink
 fi
 
-# Hidden Bar
-if check_program_installed "hiddenbar"; then
-  echo "Hidden Bar ist bereits installiert."
-else
-  echo "Installiere Hidden Bar..."
-  # Befehl zum Installieren von Hidden Bar
-  brew install --cask hidden-bar
-fi
-
-# TinkerTool
-if check_program_installed "tinkertool"; then
-  echo "TinkerTool ist bereits installiert."
-else
-  echo "Installiere TinkerTool..."
-  # Befehl zum Installieren von TinkerTool
-  brew install --cask tinker-tool
-fi
-
 # Spotify
 if check_program_installed "spotify"; then
   echo "Spotify ist bereits installiert."
