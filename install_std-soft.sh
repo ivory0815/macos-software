@@ -152,3 +152,12 @@ else
   # Befehl zum Installieren von HandBrake
   brew install --cask handbrake
 fi
+
+# CyberGhost VPN
+if check_program_installed "cyberghost"; then
+  echo "CyberGhost VPN ist bereits installiert."
+else
+  echo "Installiere CyberGhost VPN..."
+  # Befehl zum Installieren von CyberGhost VPN
+  brew install --cask cyberghost
+fi
