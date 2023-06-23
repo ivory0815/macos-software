@@ -25,6 +25,7 @@ programs=(
   "handbrake"
   "cyberghost-vpn"
   "microsoft-edge"
+  "parsec"
 )
 
 # Installationsloop für Programme
