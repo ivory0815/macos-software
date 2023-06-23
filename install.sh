@@ -36,4 +36,3 @@ for program in "${programs[@]}"; do
     echo "Installiere $program..."
     brew install --cask "$program"
   fi
-done
