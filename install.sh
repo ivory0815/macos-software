@@ -26,6 +26,7 @@ programs=(
   "cyberghost-vpn"
   "microsoft-edge"
   "parsec"
+  "tinkertool"
 )
 
 # Installationsloop für Programme
