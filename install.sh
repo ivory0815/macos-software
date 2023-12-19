@@ -29,7 +29,7 @@ programs=(
 
 # Funktion zur Überprüfung des Programmstatus
 check_program_installed() {
- command -v "$1" &>/dev/null
+    brew list --cask "$1" &>/dev/null
 }
 
 # Funktion zur Überprüfung der Programmversion
