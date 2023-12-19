@@ -1,42 +1,57 @@
 #!/bin/bash
 
-# Funktion zur Überprüfung des Programmstatus
-check_program_installed() {
-  command -v "$1" &>/dev/null
-}
-
 # Liste der Programme
 programs=(
-  "shottr"
-  "deepl"
-  "bitwarden"
-  "noir"
-  "menubarx"
-  "musicbar"
-  "alfred"
-  "topnotch"
-  "balenaetcher"
-  "visual-studio-code"
-  "caffeine"
-  "hyper"
-  "istat-menus"
-  "discord"
-  "utm"
-  "languagetool"
-  "displaylink"
-  "spotify"
-  "handbrake"
-  "cyberghost-vpn"
-  "microsoft-edge"
-  "parsec"
-  "tinkertool"
+ "shottr"
+ "deepl"
+ "bitwarden"
+ "noir"
+ "menubarx"
+ "musicbar"
+ "alfred"
+ "topnotch"
+ "balenaetcher"
+ "visual-studio-code"
+ "caffeine"
+ "hyper"
+ "istat-menus"
+ "discord"
+ "utm"
+ "languagetool"
+ "displaylink"
+ "spotify"
+ "handbrake"
+ "cyberghost-vpn"
+ "microsoft-edge"
+ "parsec"
+ "tinkertool"
 )
 
-# Installationsloop für Programme
+# Funktion zur Überprüfung des Programmstatus
+check_program_installed() {
+ command -v "$1" &>/dev/null
+}
+
+# Funktion zur Überprüfung der Programmversion
+check_program_version() {
+ program="$1"
+ version=$(brew outdated "$program" | grep "^$program$" | cut -d " " -f 2)
+ if [ -n "$version" ]; then
+  echo "$program ist in Version $version installiert."
+ else
+  echo "$program ist nicht installiert."
+ fi
+}
+
+# Überprüfung der Programmversionen
 for program in "${programs[@]}"; do
-  if check_program_installed "$program"; then
-    echo "$program ist bereits installiert."
-  else
-    echo "Installiere $program..."
-    brew install --cask "$program"
-  fi
+ check_program_version "$program"
+done
+
+# Installation der Programme
+for program in "${programs[@]}"; do
+ if ! check_program_installed "$program"; then
+  echo "Installiere $program..."
+  brew install --cask "$program"
+ fi
+done
